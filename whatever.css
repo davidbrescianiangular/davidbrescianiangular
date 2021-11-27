@@ -1,0 +1,138 @@
+body {
+    max-width: 1200px;
+    margin: 10px auto;
+    background-color: lightcyan;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.main { grid-area: main; }
+.right { grid-area: right; }
+.footer { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'main main right'
+    'footer footer footer';
+  grid-gap: 10px;
+  background-color: darkcyan;
+  padding: 10px;
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-areas:
+        'header1 header2 header3'
+        'fullHeader fullHeader fullHeader';
+    grid-gap: 10px;
+}
+
+.header1 {
+    grid-area: header1;
+    background-color: palevioletred;
+}
+
+.header2 {
+    grid-area: header2;
+    background-color: palevioletred;
+}
+
+.header3 {
+    grid-area: header3;
+    background-color: palevioletred;
+}
+
+.fullHeader {
+    grid-area: fullHeader;
+    background-color: palegoldenrod;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 10px;
+    grid-template-areas: 
+    'main1 main2'
+    'main3 main4'
+    'main5 main5'
+}
+
+.main > span {
+    background-color: darkblue;
+}
+.main1 { grid-area: main1;}
+.main2 { grid-area: main2;}
+.main3 { grid-area: main3;}
+.main4 { grid-area: main4;}
+.main5 { grid-area: main5;}
+.right1{ grid-area: right1;}
+.right2{ grid-area: right2;}
+
+.right {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    grid-template-areas: 
+    'right1'
+    'right2'
+    '.'
+    '.';
+}
+
+.right > span {
+    background-color: palegoldenrod;
+}
+
+.grid-container > div {
+  background-color: black;
+  color: transparent;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+
+  
+
+@media only screen and (max-width: 720px) {
+	  .grid-container {
+grid-template-columns: 20% auto;
+	    grid-template-areas:
+	       'header header header'
+	       'main main main'
+	       'right right right'
+	       'footer footer footer';
+}
+}
+
+@media only screen and (max-width: 500px) {
+	  .header {
+grid-template-columns: auto;
+	     grid-template-areas:
+        'header1'
+        'header2'
+        'header3'
+        'fullHeader';
+}
+}
+@media only screen and (max-width: 500px) {
+  .main {
+    grid-template-columns: auto;
+    grid-template-areas:
+      'main1'
+      'main2'
+      'main3'
+      'main4'
+      'main5';
+  }
+}
+@media only screen and (max-width: 500px) {
+  .right {
+    grid-template-columns:auto;
+    grid-template-areas:
+      'right1'
+      'right2;
+  }
+}
